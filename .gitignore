@@ -1,0 +1,27 @@
+# Secrets and local state
+.env
+.goldx_state.json
+
+# macOS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Runtime logs
+logs/*.log
+
+# Generated outputs
+alert_out/
+backtest_cache/
+backtest_out/
+xau_*.csv
+xau_*.png
+
+#python files
+test.py
+test-1.ipynb

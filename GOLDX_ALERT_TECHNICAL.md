@@ -1,4 +1,4 @@
-/。爱的是 # goldx_alert.py 技术文档
+# goldx_alert.py 技术文档
 
 ## 1. 文件定位与目标
 

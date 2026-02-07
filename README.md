@@ -5,18 +5,20 @@
 ## 快速开始
 
 1. 依赖：pip install python-dotenv twelvedata matplotlib
-2. 复制 `config.example.env` 为 `.env`，填好：
+2. 去https://twelvedata.com/account/api-keys注册账户并拿到 api-keys，通过该 api 爬取分钟级金价数据。
+3. 复制 `config.example.env` 为 `.env`，填好：
    - `TWELVEDATA_API_KEYS`（或单个 `TWELVEDATA_API_KEY`）
-   - `SMTP_*`（用邮箱的授权码/应用专用密码）
-   - 发送邮箱以及接收邮箱
-   - 多个 API key 用英文逗号分隔，程序会轮询使用并在配额/限流时自动切换
-3. 先测试邮件是否能发出去：
+   - `SMTP_PASSWORD`（邮箱的授权码，需要去对应的邮箱网页端获取，不是登录密码！）
+   - 发送邮箱'SMTP_FROM'以及接收邮箱'SMTP_TO'
+   - 若使用多个 API key ,用英文逗号分隔，程序会轮询使用并在配额/限流时自动切换
+     
+4. 测试邮件是否能发出去：
 ```bash
 python3 goldx_alert.py --test-email
 ```
 > 如果你用 Twelve Data 免费额度，建议把 `POLL_SECONDS` 设为 `120` 或更大，或只在你关注的时段运行。
 
-只跑一次（适合手动/定时任务）：
+测试只跑一次能否成功：
 
 ```bash
 python3 goldx_alert.py --once
